@@ -1,35 +1,14 @@
 package com.bookapp.dto;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-
-@Entity
-@Table(name = "b_table")
-public class Book{
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Book {
 	private Long id;
-
-	//@NotEmpty
 	private String isbn;
-
-	@NotEmpty
 	private String title;
-
-
 	private String author;
-
 	private double price;
 
 	public Book(Long id, String isbn, String title, String author, double price) {
 		this.id = id;
-		this.isbn = isbn;
-		this.title = title;
-		this.author = author;
-		this.price = price;
-	}
-
-	public Book(String isbn, String title, String author, double price) {
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;
